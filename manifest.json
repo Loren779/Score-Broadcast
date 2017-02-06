@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Sports Updates",
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "sportsupdates@example.com"
+    }
+  },
+
+  "browser_action": {
+    "default_icon": {
+        "19": "icons/default.png",
+        "48": "icons/default.png",
+        "72": "icons/default.png",
+        "128": "icons/default.png"
+    },
+    "default_title": "Sports Updates",
+    "default_popup": "index.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+      {
+        "matches": ["https://*/*", "http://*/*"],
+        "css": ["legacy.css", "main.css", "shell-desktop.css", "page.css", "datePicker/scoreboards.css", "jquery-ui.css", "base64-icons-woff-v6.css"],
+        "js": ["jquery.min.js", "main.js", "jquery-ui.js", "bootstrap.min.js"]
+      }
+    ]
+}
+
